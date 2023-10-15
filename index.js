@@ -23,6 +23,7 @@ inputBtn.addEventListener("click", function() {
 
 tabBtn.addEventListener("click", function() {
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    console.log(tabs[0])
     myLeads.unshift(tabs[0].url)
     localStorage.setItem("myLeads", JSON.stringify(myLeads))
     inputEl.value = ""
