@@ -70,13 +70,7 @@ function render(leads) {
   for (let i = 0; i < leads.length; i++) {
     if (leads[i].includes("http")) {
       listItems += `
-      <li>      listItems += `
       <li>
-        <a target='_blank' href='${leads[i]}'>
-          ${leads[i]}
-        </a>
-      </li>
-      `
         <a target='_blank' href='${leads[i]}'>
           ${leads[i]}
         </a>
