@@ -42,26 +42,14 @@ clearBtn.addEventListener("dblclick", function() {
 // Render leads
 function render(leads) {
   let listItems = ""
-  if (leads[0]) {
-    for (let i = 0; i < leads.length; i++) {
-      if (leads[i].includes("://")) {
-        listItems += `
-        <li>
-          <a target='_blank' href='${leads[i]}'>
-            ${leads[i]}
-          </a>
-        </li>
-        `
-      } else {
-        listItems += `
-        <li>
-          <a target='_blank' href='https://${leads[i]}'>
-            ${leads[i]}
-          </a>
-        </li>
-        `
-      }
-    }
+  for (let i = 0; i < leads.length; i++) {
+    listItems += `
+      <li>
+        <a target='_blank' href='https://${leads[i]}'>
+          ${leads[i]}
+        </a>
+      </li>
+      `
   }
   ulEl.innerHTML = listItems
 }
