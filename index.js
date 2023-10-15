@@ -69,17 +69,22 @@ function render(leads) {
   let listItems = ""
   for (let i = 0; i < leads.length; i++) {
     if (leads[i].includes("http")) {
-      const prefix = ""
+      listItems += `
+      <li>
+        <a target='_blank' href='${leads[i]}'>
+          ${leads[i]}
+        </a>
+      </li>
+      `
     } else {
-      const prefix = "https://"
+      listItems += `
+      <li>
+        <a target='_blank' href='https://${leads[i]}'>
+          ${leads[i]}
+        </a>
+      </li>
+      `
     }
-    listItems += `
-    <li>
-      <a target='_blank' href='${prefix}${leads[i]}'>
-        ${leads[i]}
-      </a>
-    </li>
-    `
   }
   ulEl.innerHTML = listItems
 }
