@@ -51,16 +51,16 @@ function render(leads) {
         </a>
       </li>
       `
-    } else {
-      listItems += `
-      <li>
-        <a target='_blank' href='https://${leads[i]}'>
-          ${leads[i]}
-        </a>
-      </li>
-      `
+      } else {
+        listItems += `
+        <li>
+          <a target='_blank' href='https://${leads[i]}'>
+            ${leads[i]}
+          </a>
+        </li>
+        `
+      }
     }
+    ulEl.innerHTML = listItems
   }
-  ulEl.innerHTML = listItems
-}
 
