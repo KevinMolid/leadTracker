@@ -54,12 +54,32 @@ function render(leads) {
     } else {
       listItems += `
       <li>
-        <a target='_blank' href=https://'${leads[i]}'>
+        <a target='_blank' href='https://${leads[i]}'>
           ${leads[i]}
         </a>
       </li>
       `
     }
+  }
+  ulEl.innerHTML = listItems
+}
+
+// Render leads
+function render(leads) {
+  let listItems = ""
+  for (let i = 0; i < leads.length; i++) {
+    if (leads[i].includes("http")) {
+      const prefix = ""
+    } else {
+      const prefix = "https://"
+    }
+    listItems += `
+    <li>
+      <a target='_blank' href='${prefix}${leads[i]}'>
+        ${leads[i]}
+      </a>
+    </li>
+    `
   }
   ulEl.innerHTML = listItems
 }
